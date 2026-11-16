@@ -292,11 +292,14 @@ export default function App() {
         content: m.role === 'user' ? m.content : (m.data?.migration_readiness ? m.data.migration_readiness.summary : (m.content || ''))
       }))
 
-      const response = await migrateContent({
-        file: fileToSend,
-        text: cleanText,
-        conversationHistory
-      })
+      const [response] = await Promise.all([
+        migrateContent({
+          file: fileToSend,
+          text: cleanText,
+          conversationHistory
+        }),
+        new Promise(res => setTimeout(res, 900))
+      ])
 
       if (response.document_metadata && userMsg.file) {
         userMsg.docMeta = response.document_metadata
@@ -584,7 +587,7 @@ export default function App() {
                   // AI Answer Card (NO duplicate open button here)
                   return (
                     <div key={msg.id} className="bubble ai">
-                      <BridgeResultCard data={msg.data} />
+                      <BridgeResultCard data={msg.data} guardrails={msg.data?.guardrails || msg.guardrails} />
                     </div>
                   )
                 })}
