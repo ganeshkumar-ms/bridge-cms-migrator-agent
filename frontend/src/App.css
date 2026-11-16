@@ -120,7 +120,7 @@ button, input, textarea {
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 7px;
-  background: linear-gradient(90deg, #fff, #ffb000, #5c4300);
+  background: linear-gradient(90deg, #fff, #078cff, #5c4300);
   background-size: 240% auto;
   -webkit-background-clip: text;
   color: transparent;
@@ -161,7 +161,7 @@ header {
   justify-content: center;
   border: 1px solid var(--line);
   background: rgba(7, 140, 255, 0.08);
-  color: #f7e6c4;
+  color: #f0f7ff;
   border-radius: 999px;
   padding: 9px 18px;
   font-size: 12px;
@@ -174,7 +174,7 @@ header {
 .enter:hover, .ghost:hover {
   transform: translateY(-2px);
   color: #fff;
-  border-color: #ffb000;
+  border-color: #078cff;
   box-shadow: 0 8px 30px rgba(7, 140, 255, 0.3);
 }
 
@@ -189,7 +189,7 @@ header {
 
 .eyebrow {
   text-align: center;
-  color: #ffb000;
+  color: #078cff;
   font-size: 11.5px;
   letter-spacing: 2.8px;
   font-weight: 700;
@@ -209,7 +209,7 @@ header {
 }
 
 .home h1 span {
-  background: linear-gradient(95deg, #ffb000, #ffcf66, #fff);
+  background: linear-gradient(95deg, #078cff, #ffcf66, #fff);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -236,7 +236,7 @@ header {
   position: absolute;
   inset: -3px;
   border-radius: 25px;
-  background: conic-gradient(from 0deg, transparent 40%, #ffb000, transparent 56%, #5c4300, transparent 72%);
+  background: conic-gradient(from 0deg, transparent 40%, #078cff, transparent 56%, #5c4300, transparent 72%);
   filter: blur(10px);
   opacity: 0.35;
   animation: spin 8s linear infinite;
@@ -279,8 +279,8 @@ header {
   height: 44px;
   border: 0;
   border-radius: 14px;
-  color: #161003;
-  background: #ffb000;
+  color: #020c16;
+  background: #078cff;
   cursor: pointer;
   transition: all 0.25s;
   box-shadow: 0 8px 28px rgba(7, 140, 255, 0.35);
@@ -310,7 +310,7 @@ header {
 
 .startAttach:hover, .plus:hover {
   color: #fff;
-  border-color: #ffb000;
+  border-color: #078cff;
   transform: translateY(-2px);
 }
 
@@ -330,13 +330,13 @@ header {
   border: 1px solid rgba(7, 140, 255, 0.35);
   border-radius: 10px;
   font-size: 12px;
-  color: #f7e6c4;
+  color: #f0f7ff;
 }
 
 .filePill button {
   background: transparent;
   border: 0;
-  color: #ffb000;
+  color: #078cff;
   cursor: pointer;
   font-size: 13px;
 }
@@ -358,7 +358,7 @@ header {
 .recentOnly span {
   font-size: 11px;
   letter-spacing: 1.5px;
-  color: #ffb000;
+  color: #078cff;
   font-weight: 700;
 }
 
@@ -394,7 +394,7 @@ header {
 
 .card small {
   font-size: 10px;
-  color: #ffb000;
+  color: #078cff;
   letter-spacing: 1px;
   font-weight: 700;
   text-transform: uppercase;
@@ -481,7 +481,7 @@ header {
 .new {
   border: 1px solid rgba(7, 140, 255, 0.45);
   background: rgba(7, 140, 255, 0.1);
-  color: #ffb000;
+  color: #078cff;
   border-radius: 12px;
   height: 38px;
   min-height: 38px;
@@ -558,7 +558,7 @@ header {
 .histTitle {
   background: transparent;
   border: 0;
-  color: #e6dfcf;
+  color: #f0f7ff;
   text-align: left;
   font-size: 13px;
   white-space: nowrap;
@@ -575,7 +575,7 @@ header {
 }
 
 .histRow.on .histTitle {
-  color: #ffb000;
+  color: #078cff;
   font-weight: 600;
 }
 
@@ -627,7 +627,7 @@ header {
 .histInput {
   width: 100%;
   background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #ffb000;
+  border: 1px solid #078cff;
   color: #fff;
   border-radius: 6px;
   padding: 6px 10px;
@@ -729,7 +729,7 @@ header {
 .chatHead small {
   display: block;
   margin-top: 3px;
-  color: #ffb000;
+  color: #078cff;
   font-size: 11px;
   letter-spacing: 1.5px;
   font-weight: 700;
@@ -752,12 +752,12 @@ header {
 .titleEditable:hover {
   background: rgba(7, 140, 255, 0.12);
   border-color: rgba(7, 140, 255, 0.35);
-  color: #ffb000;
+  color: #078cff;
 }
 
 .titleInput {
   background: rgba(0, 0, 0, 0.5);
-  border: 1px solid #ffb000;
+  border: 1px solid #078cff;
   color: #fff;
   border-radius: 6px;
   padding: 5px 12px;
@@ -876,7 +876,7 @@ header {
 
 .userFileMeta {
   font-size: 12px;
-  color: #f7e6c4;
+  color: #f0f7ff;
   opacity: 0.85;
 }
 
@@ -894,9 +894,9 @@ header {
 }
 
 .userFileCard:hover .userFileViewBtn {
-  background: #ffb000;
-  color: #161003;
-  border-color: #ffb000;
+  background: #078cff;
+  color: #020c16;
+  border-color: #078cff;
 }
 
 .ai {
@@ -925,7 +925,7 @@ header {
   font-weight: 800;
   letter-spacing: 3px;
   font-size: 13px;
-  background: linear-gradient(90deg, #fff, #ffb000);
+  background: linear-gradient(90deg, #fff, #078cff);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -942,7 +942,7 @@ header {
   width: 3px;
   height: 6px;
   border-radius: 3px;
-  background: #ffb000;
+  background: #078cff;
   animation: wave 0.75s ease-in-out infinite;
 }
 
@@ -1055,13 +1055,13 @@ header {
 
 .bridgeStatusBadge.statusReady {
   background: rgba(7, 140, 255, 0.15);
-  color: #ffb000;
+  color: #078cff;
   border: 1px solid rgba(7, 140, 255, 0.4);
 }
 
 .bridgeStatusBadge.statusWarn {
   background: rgba(255, 179, 71, 0.15);
-  color: #ffb347;
+  color: #38bdf8;
   border: 1px solid rgba(255, 179, 71, 0.4);
 }
 
@@ -1111,7 +1111,7 @@ header {
 
 .bridgeSummaryText {
   font-size: 14.5px;
-  color: #f7e6c4;
+  color: #f0f7ff;
   line-height: 1.6;
   margin: 0;
 }
@@ -1156,8 +1156,8 @@ header {
   flex-shrink: 0;
 }
 
-.metricDot.map { background: #ffb000; box-shadow: 0 0 6px rgba(7, 140, 255, 0.6); }
-.metricDot.trans { background: #ffb347; box-shadow: 0 0 6px rgba(255, 179, 71, 0.6); }
+.metricDot.map { background: #078cff; box-shadow: 0 0 6px rgba(7, 140, 255, 0.6); }
+.metricDot.trans { background: #38bdf8; box-shadow: 0 0 6px rgba(255, 179, 71, 0.6); }
 .metricDot.exc { background: #ff5c5c; box-shadow: 0 0 6px rgba(255, 92, 92, 0.6); }
 .metricDot.tgt { background: #64dbff; box-shadow: 0 0 6px rgba(100, 219, 255, 0.6); }
 
@@ -1175,15 +1175,15 @@ header {
   font-family: "JetBrains Mono", monospace;
 }
 
-.metricCount.map { color: #ffb000; }
-.metricCount.trans { color: #ffb347; }
+.metricCount.map { color: #078cff; }
+.metricCount.trans { color: #38bdf8; }
 .metricCount.exc { color: #ff5c5c; }
-.metricCount.zero { color: #7a6e55; }
+.metricCount.zero { color: #849bb4; }
 
 .metricText {
   font-size: 12px;
   font-weight: 700;
-  color: #f7e6c4;
+  color: #f0f7ff;
   letter-spacing: 0.3px;
 }
 
@@ -1210,7 +1210,7 @@ header {
 .bridgeTabBtn.active {
   background: rgba(7, 140, 255, 0.15);
   border-color: rgba(7, 140, 255, 0.4);
-  color: #ffb000;
+  color: #078cff;
 }
 
 .bridgeTabBtn:hover:not(.active) {
@@ -1251,7 +1251,7 @@ header {
 .bridgeColTag {
   font-size: 9px;
   font-weight: 700;
-  color: #ffb347;
+  color: #38bdf8;
   letter-spacing: 1px;
 }
 
@@ -1289,33 +1289,33 @@ header {
   border-radius: 999px;
   background: rgba(7, 140, 255, 0.12);
   border: 1px solid rgba(7, 140, 255, 0.35);
-  color: #ffb000;
+  color: #078cff;
 }
 
 .bridgeArrow {
   font-size: 14px;
-  color: #ffb000;
+  color: #078cff;
 }
 
 .bridgeSampleBox {
   background: rgba(0, 0, 0, 0.3);
   padding: 8px 12px;
   border-radius: 8px;
-  border-left: 3px solid #ffb000;
+  border-left: 3px solid #078cff;
 }
 
 .bridgeSampleBox small {
   display: block;
   font-size: 10px;
   font-weight: 700;
-  color: #ffb000;
+  color: #078cff;
   letter-spacing: 1px;
   margin-bottom: 2px;
 }
 
 .bridgeSampleBox p {
   font-size: 12.5px;
-  color: #f7e6c4;
+  color: #f0f7ff;
   font-style: italic;
   margin: 0;
 }
@@ -1344,14 +1344,14 @@ header {
 .bridgePayloadHead span {
   font-size: 11px;
   font-weight: 700;
-  color: #ffb000;
+  color: #078cff;
   letter-spacing: 1px;
 }
 
 .bridgeCopyBtn {
   background: rgba(7, 140, 255, 0.15);
   border: 1px solid rgba(7, 140, 255, 0.35);
-  color: #ffb000;
+  color: #078cff;
   border-radius: 6px;
   padding: 4px 10px;
   font-size: 11px;
@@ -1413,7 +1413,7 @@ header {
 
 .bridgeSevPill.sev-warning {
   background: rgba(255, 179, 71, 0.2);
-  color: #ffb347;
+  color: #38bdf8;
   border: 1px solid rgba(255, 179, 71, 0.5);
 }
 
@@ -1425,7 +1425,7 @@ header {
 .bridgeExcIssue, .bridgeExcRisk {
   font-size: 13px;
   line-height: 1.5;
-  color: #e6dfcf;
+  color: #f0f7ff;
   margin: 0;
 }
 
@@ -1451,7 +1451,7 @@ header {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #ffb000;
+  color: #078cff;
   margin-bottom: 10px;
 }
 
@@ -1466,7 +1466,7 @@ header {
 
 .bridgeList li {
   font-size: 13px;
-  color: #f7e6c4;
+  color: #f0f7ff;
   line-height: 1.55;
   position: relative;
   padding-left: 14px;
@@ -1476,7 +1476,7 @@ header {
   content: "•";
   position: absolute;
   left: 2px;
-  color: #ffb000;
+  color: #078cff;
 }
 
 /* Document Viewer (Side-by-side) */
@@ -1522,7 +1522,7 @@ header {
 .docViewerBtn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
-  color: #f7e6c4;
+  color: #f0f7ff;
   border-radius: 8px;
   padding: 5px 10px;
   font-size: 11px;
@@ -1532,8 +1532,8 @@ header {
 }
 
 .docViewerBtn:hover {
-  color: #ffb000;
-  border-color: #ffb000;
+  color: #078cff;
+  border-color: #078cff;
 }
 
 .docViewerBtn.close {
@@ -1585,7 +1585,7 @@ header {
     padding: 6px 12px;
     background: rgba(7, 140, 255, 0.1);
     border: 1px solid var(--line);
-    color: #ffb000;
+    color: #078cff;
     border-radius: 999px;
     font-size: 11px;
     font-weight: 700;
@@ -1597,7 +1597,7 @@ header {
     inset: 0;
     z-index: 100;
     width: 100%;
-    background: #161003;
+    background: #020c16;
   }
   .drawerClose {
     display: grid;
@@ -1716,7 +1716,7 @@ header {
 .histActionBtn:not(.danger):hover {
   color: #ffffff !important;
   background: rgba(7, 140, 255, 0.40) !important;
-  border-color: #ffb000 !important;
+  border-color: #078cff !important;
   transform: scale(1.04);
 }
 .histIcon.del,
