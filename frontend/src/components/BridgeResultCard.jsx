@@ -1,5 +1,41 @@
 import { useState } from 'react'
 
+function parseRejection(data) {
+  const rej = data?.rejection_details || {}
+  const msg = typeof data?.message === 'string' ? data.message : ''
+  let title = rej.title || data?.title || ''
+  let filename = rej.filename || data?.filename || data?.document?.filename || data?.document_metadata?.filename || 'Uploaded File'
+  let reason = rej.reason || rej.why || ''
+  let technicalDetail = rej.technical_detail || ''
+  let supported = rej.supported_formats || ''
+  let howToFix = rej.how_to_fix || ''
+
+  if (msg.includes('•') || (!reason && msg.includes('File Not Accepted'))) {
+    const parts = msg.split(/\s*•\s*/)
+    parts.forEach((p, idx) => {
+      const part = p.trim()
+      if (idx === 0 && !title) {
+        title = part
+      } else if (part.toLowerCase().startsWith('file:') && !filename) {
+        filename = part.substring(part.indexOf(':') + 1).trim()
+      } else if (part.toLowerCase().includes('why it was not accepted:') && !reason) {
+        reason = part.substring(part.indexOf(':') + 1).trim()
+      } else if (part.toLowerCase().includes('technical details:') && !technicalDetail) {
+        technicalDetail = part.substring(part.indexOf(':') + 1).trim()
+      } else if (part.toLowerCase().includes('supported formats') && !supported) {
+        supported = part.substring(part.indexOf(':') + 1).trim()
+      } else if (part.toLowerCase().includes('how to fix') && !howToFix) {
+        howToFix = part.substring(part.indexOf(':') + 1).trim()
+      }
+    })
+  }
+  if (!title) title = 'File Not Accepted'
+    const isSecurity = /credential|secret|access key|password|token/i.test(title + ' ' + reason);
+  let reasonLabel = isSecurity ? 'Security & Policy Violation' : 'Reason for Rejection';
+  const isFormatIssue = /format|extension|unsupported|binary|unreadable|corrupt|container|mime/i.test(title + ' ' + reason + ' ' + technicalDetail) && !isSecurity && !/empty|blank/i.test(title + ' ' + reason);
+  return { title, filename, reason, reasonLabel, technicalDetail, supported: isFormatIssue ? supported : '', howToFix }
+}
+
 export default function BridgeResultCard({ data, guardrails: propGuardrails }) {
   const [copiedPayload, setCopiedPayload] = useState(false)
   const [activeTab, setActiveTab] = useState('mappings') // 'mappings' | 'payload' | 'exceptions'
@@ -8,7 +44,68 @@ export default function BridgeResultCard({ data, guardrails: propGuardrails }) {
   const guardrails = propGuardrails || data?.guardrails || {}
   const traceId = data?.trace_id || guardrails?.trace_id || ''
 
-  // Fallback to plain conversational response if not a migration structure
+  // 1. Structured File Rejection Card
+  if (data.rejected || data.rejection_details || (typeof data.message === 'string' && data.message.includes('File Not Accepted'))) {
+    const rej = parseRejection(data)
+    const title = rej.title
+    const filename = rej.filename
+    const reason = rej.reason
+    const technicalDetail = rej.technicalDetail
+    const supported = rej.supported
+    const howToFix = rej.howToFix
+
+    return (
+      <div className="bridgeRejectionCard">
+        <div className="bridgeRejectionHeader">
+          <div className="bridgeRejectionBadge">
+            <span className="rejectionDot" />
+            ⚠️ {title}
+          </div>
+          <span className="bridgeRejectionFile">
+            📄 {filename} {rej.detected_type ? `(${rej.detected_type})` : ''}
+          </span>
+        </div>
+
+        <div className="bridgeRejectionBody">
+          {reason && (
+            <div className="rejectionSection">
+              <span className="rejectionLabel">{rej.reasonLabel || 'Reason for Rejection'}</span>
+              <p className="rejectionValue">{reason}</p>
+            </div>
+          )}
+
+          {technicalDetail && (
+            <div className="rejectionSection">
+              <span className="rejectionLabel">Technical Details</span>
+              <p className="rejectionValue mono">{technicalDetail}</p>
+            </div>
+          )}
+
+          {supported && (
+            <div className="rejectionSection">
+              <span className="rejectionLabel">Supported Formats for BRIDGE</span>
+              <p className="rejectionValue">{supported}</p>
+            </div>
+          )}
+
+          {howToFix && (
+            <div className="rejectionSection fixSection">
+              <span className="rejectionLabel">How to Fix & Re-upload</span>
+              <p className="rejectionValue">{howToFix}</p>
+            </div>
+          )}
+
+          {!reason && (
+            <div style={{ whiteSpace: 'pre-wrap', lineHeight: 1.6, fontSize: '13.5px', color: '#e2e8f0' }}>
+              {data.message}
+            </div>
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  // 2. Fallback to plain conversational response if not a migration structure
   if (data.type === 'chat' || (!data.migration_readiness && data.message)) {
     return (
       <div className="bridgeChatReply">
@@ -33,7 +130,7 @@ export default function BridgeResultCard({ data, guardrails: propGuardrails }) {
             </span>
           </div>
         )}
-        <p>{data.message}</p>
+        <div style={{ whiteSpace: 'pre-wrap', lineHeight: 1.65, fontSize: '14.5px', color: '#f0f7ff' }}>{data.message}</div>
       </div>
     )
   }
@@ -53,13 +150,13 @@ export default function BridgeResultCard({ data, guardrails: propGuardrails }) {
       label: 'READY TO MIGRATE',
       icon: '✓',
       badgeClass: 'statusReady',
-      color: '#ffb000'
+      color: '#078cff'
     },
     TRANSFORMS_REQUIRED: {
       label: 'TRANSFORMS REQUIRED',
       icon: '⚡',
       badgeClass: 'statusWarn',
-      color: '#ffb347'
+      color: '#facc15'
     },
     SCHEMA_CONFLICTS: {
       label: 'SCHEMA CONFLICTS',
@@ -71,7 +168,7 @@ export default function BridgeResultCard({ data, guardrails: propGuardrails }) {
     label: 'SCHEMA INSPECTED',
     icon: 'ℹ',
     badgeClass: 'statusWarn',
-    color: '#ffb000'
+    color: '#078cff'
   }
 
   function handleCopyPayload() {

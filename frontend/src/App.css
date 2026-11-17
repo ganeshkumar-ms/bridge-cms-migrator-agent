@@ -81,7 +81,7 @@ button, input, textarea {
   height: 100%;
   position: relative;
   background: radial-gradient(circle at 50% -10%, rgba(7, 140, 255, 0.18), transparent 38%),
-              radial-gradient(circle at 95% 90%, rgba(92, 67, 0, 0.28), transparent 30%),
+              radial-gradient(circle at 95% 90%, rgba(7, 140, 255, 0.08), transparent 30%),
               var(--bg);
   overflow: hidden;
 }
@@ -107,7 +107,7 @@ button, input, textarea {
   inset: -35%;
   pointer-events: none;
   background: radial-gradient(circle at 24% 25%, rgba(7, 140, 255, 0.28), transparent 23%),
-              radial-gradient(circle at 78% 70%, rgba(92, 67, 0, 0.22), transparent 25%);
+              radial-gradient(circle at 78% 70%, rgba(7, 140, 255, 0.08), transparent 25%);
   animation: drift 16s ease-in-out infinite alternate;
   z-index: 0;
 }
@@ -120,7 +120,7 @@ button, input, textarea {
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 7px;
-  background: linear-gradient(90deg, #fff, #078cff, #5c4300);
+  background: linear-gradient(90deg, #fff, #078cff, #38bdf8);
   background-size: 240% auto;
   -webkit-background-clip: text;
   color: transparent;
@@ -209,7 +209,7 @@ header {
 }
 
 .home h1 span {
-  background: linear-gradient(95deg, #078cff, #ffcf66, #fff);
+  background: linear-gradient(95deg, #078cff, #38bdf8, #fff);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -236,7 +236,7 @@ header {
   position: absolute;
   inset: -3px;
   border-radius: 25px;
-  background: conic-gradient(from 0deg, transparent 40%, #078cff, transparent 56%, #5c4300, transparent 72%);
+  background: conic-gradient(from 0deg, transparent 40%, #078cff, transparent 56%, #38bdf8, transparent 72%);
   filter: blur(10px);
   opacity: 0.35;
   animation: spin 8s linear infinite;
@@ -254,7 +254,7 @@ header {
   align-items: center;
   border: 1px solid var(--line-strong);
   border-radius: 23px;
-  background: rgba(38, 29, 4, 0.94);
+  background: #051a2c;
   box-shadow: 0 25px 90px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(22px);
 }
@@ -416,7 +416,7 @@ header {
 }
 
 .card p {
-  color: #c9b48c;
+  color: #849bb4;
   font-size: 12px;
   line-height: 1.45;
   margin: 0;
@@ -427,6 +427,7 @@ header {
 }
 
 .emptyCard {
+  grid-column: 1 / -1 !important;
   cursor: default;
 }
 
@@ -463,7 +464,7 @@ header {
 /* Sidebar */
 .side {
   border-right: 1px solid var(--line);
-  background: rgba(38, 29, 4, 0.95);
+  background: #051a2c;
   backdrop-filter: blur(24px);
   padding: 20px 14px;
   display: flex;
@@ -965,7 +966,7 @@ header {
 /* Composer Area */
 .composerArea {
   padding: 12px clamp(18px, 6vw, 80px) 22px;
-  background: linear-gradient(to top, rgba(22, 16, 3, 0.95), transparent);
+  background: linear-gradient(to top, rgba(2, 12, 22, 0.95), transparent);
 }
 
 .composer {
@@ -974,7 +975,7 @@ header {
   padding: 8px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: rgba(38, 29, 4, 0.92);
+  background: #051a2c;
   box-shadow: 0 16px 55px rgba(0, 0, 0, 0.5);
   transition: all 0.3s;
 }
@@ -1008,7 +1009,7 @@ header {
 
 .fine {
   text-align: center;
-  color: #c9b48c;
+  color: #849bb4;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 1.2px;
@@ -1067,9 +1068,9 @@ header {
 }
 
 .bridgeStatusBadge.statusWarn {
-  background: rgba(255, 179, 71, 0.15);
-  color: #38bdf8;
-  border: 1px solid rgba(255, 179, 71, 0.4);
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.45);
 }
 
 .bridgeStatusBadge.statusDanger {
@@ -1099,7 +1100,7 @@ header {
 
 .bridgeScoreMax {
   font-size: 13px;
-  color: #c9b48c;
+  color: #849bb4;
 }
 
 .bridgeScoreBarBg {
@@ -1164,7 +1165,7 @@ header {
 }
 
 .metricDot.map { background: #078cff; box-shadow: 0 0 6px rgba(7, 140, 255, 0.6); }
-.metricDot.trans { background: #38bdf8; box-shadow: 0 0 6px rgba(255, 179, 71, 0.6); }
+.metricDot.trans { background: #38bdf8; box-shadow: 0 0 6px rgba(7, 140, 255, 0.6); }
 .metricDot.exc { background: #ff5c5c; box-shadow: 0 0 6px rgba(255, 92, 92, 0.6); }
 .metricDot.tgt { background: #64dbff; box-shadow: 0 0 6px rgba(100, 219, 255, 0.6); }
 
@@ -1172,7 +1173,7 @@ header {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.6px;
-  color: #c9b48c;
+  color: #849bb4;
   text-transform: uppercase;
 }
 
@@ -1235,7 +1236,7 @@ header {
 .bridgeMapCard {
   padding: 14px;
   border-radius: 12px;
-  background: rgba(38, 29, 4, 0.6);
+  background: rgba(5, 26, 44, 0.6);
   border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
@@ -1273,7 +1274,7 @@ header {
 }
 
 .bridgeFieldName.tgt {
-  color: #ffcf66;
+  color: #38bdf8;
 }
 
 .bridgeTypeTag {
@@ -1329,7 +1330,7 @@ header {
 
 .bridgeNotes {
   font-size: 12px;
-  color: #c9b48c;
+  color: #849bb4;
   line-height: 1.45;
 }
 
@@ -1374,7 +1375,7 @@ header {
 .bridgePayloadCode {
   font-family: "JetBrains Mono", monospace;
   font-size: 12.5px;
-  color: #ffcf66;
+  color: #38bdf8;
   white-space: pre-wrap;
   margin: 0;
   max-height: 380px;
@@ -1419,9 +1420,9 @@ header {
 }
 
 .bridgeSevPill.sev-warning {
-  background: rgba(255, 179, 71, 0.2);
-  color: #38bdf8;
-  border: 1px solid rgba(255, 179, 71, 0.5);
+  background: rgba(250, 204, 21, 0.18);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.45);
 }
 
 .bridgeExcField {
@@ -1442,7 +1443,114 @@ header {
   border-radius: 6px;
   padding: 8px 10px;
   font-size: 12px;
-  color: #ffcf66;
+  color: #38bdf8;
+}
+
+/* Structured File Rejection Card */
+.bridgeRejectionCard {
+  background: rgba(5, 26, 44, 0.95);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bridgeRejectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+}
+
+.bridgeRejectionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: rgba(239, 68, 68, 0.16);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+}
+
+.rejectionDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f87171;
+  box-shadow: 0 0 8px #f87171;
+}
+
+.bridgeRejectionFile {
+  font-size: 12px;
+  color: #cbd5e1;
+  background: rgba(7, 140, 255, 0.08);
+  border: 1px solid rgba(7, 140, 255, 0.22);
+  padding: 4px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+.bridgeRejectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rejectionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rejectionLabel {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.rejectionValue {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #e2e8f0;
+}
+
+.rejectionValue.mono {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: #cbd5e1;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rejectionSection.fixSection {
+  background: rgba(7, 140, 255, 0.08);
+  border: 1px solid rgba(7, 140, 255, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.rejectionSection.fixSection .rejectionLabel {
+  color: #34d399;
 }
 
 /* Checklist */
@@ -1715,7 +1823,7 @@ header {
 }
 .histIcon.edit,
 .histActionBtn:not(.danger) {
-  color: #ffd970 !important;
+  color: #38bdf8 !important;
   background: rgba(7, 140, 255, 0.20) !important;
   border: 1px solid rgba(7, 140, 255, 0.46) !important;
 }
