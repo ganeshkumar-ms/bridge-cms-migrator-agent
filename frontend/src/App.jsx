@@ -607,6 +607,23 @@ export default function App() {
 
               {/* Composer */}
               <div className="composerArea">
+                {selectedFile && (
+                  <div style={{ display: 'flex', justifyContent: 'center', width: '100%', margin: '0 auto 10px' }}>
+                    <div className="attachedRow composerAttached">
+                      <span className="attachChip">
+                        <span className="attachName">{selectedFile.name}</span>
+                        <button
+                          type="button"
+                          className="attachRemove"
+                          aria-label={`Remove ${selectedFile.name}`}
+                          onClick={() => { setSelectedFile(null); if (fileInputRef.current) fileInputRef.current.value = '' }}
+                        >
+                          ×
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                )}
                 <div className="composer">
                   <form onSubmit={handleSubmit}>
                     <input
@@ -629,7 +646,7 @@ export default function App() {
                       </svg>
                     </button>
                     <input
-                      placeholder={selectedFile ? `Attached: ${selectedFile.name} — Add migration focus...` : "Message BRIDGE or paste schema/content to map..."}
+                      placeholder="Message BRIDGE or paste CMS content to migrate..."
                       value={inputVal}
                       onChange={e => setInputVal(e.target.value)}
                       disabled={loading}
@@ -642,16 +659,8 @@ export default function App() {
                     </button>
                   </form>
                 </div>
-                {selectedFile && (
-                  <div style={{ display: 'flex', justifyContent: 'center', width: '100%', margin: '8px auto 0' }}>
-                    <div className="filePill">
-                      <span>Attached: {selectedFile.name} ({(selectedFile.size / 1024).toFixed(1)} KB)</span>
-                      <button onClick={() => setSelectedFile(null)}>✕</button>
-                    </div>
-                  </div>
-                )}
                 <div className="fine">
-                  ENTERPRISE BFSI · CMS MIGRATOR · ZERO DATA LOSS · SECURE & SANITIZED
+                  ENTERPRISE CMS MIGRATOR · HIGH-CONCURRENCY MIGRATION AGENT · ZERO DATA LOSS
                 </div>
               </div>
             </main>
