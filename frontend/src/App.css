@@ -3402,13 +3402,3 @@ html, body {
   box-shadow: none !important;
   filter: grayscale(0.35);
 }
-
-/* === AI STORE IFRAME 90% ZOOM ON CHAT PAGE ONLY (HOME & STANDALONE UNCHANGED) === */
-@media (min-width: 961px) {
-  html.in-iframe:has(.layout) {
-    zoom: 0.9;
-  }
-  html.in-iframe:has(.layout) .layout {
-    height: 100% !important;
-  }
-}
