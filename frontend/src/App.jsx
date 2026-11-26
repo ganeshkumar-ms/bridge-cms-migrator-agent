@@ -149,6 +149,12 @@ export default function App() {
   const fileInputRef = useRef(null)
   const homeFileInputRef = useRef(null)
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.self !== window.top) {
+      document.documentElement.classList.add('in-iframe')
+    }
+  }, [])
+
   // Persist sessions to localStorage (NEVER save empty conversations)
   useEffect(() => {
     const valid = sessions.filter(s => s.messages && s.messages.length > 0)
